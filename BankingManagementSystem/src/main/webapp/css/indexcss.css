@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.navpart{ height:9vh;background-color: rgb(3, 166, 252);  box-shadow: 1px 1px 1px rgb(3, 166, 252); }
+#navbarSupportedContent ul li a{color:white;}
+.icon{background: rgb(192, 192, 192); }
+.icon i{padding: 0 27px; font-size: 20px; }
+.footer{height: 8vh;background: rgb(1, 1, 26);}
+

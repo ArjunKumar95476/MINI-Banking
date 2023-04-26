@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/pinpage.css">
+</head>
+<body>
+    <div class="container text-center pt-3">
+        <h1 style="text-shadow: 1px 1px 1px black
+        ;">Create Your Pin</h1>
+    </div>
+   <div class="container content">
+    <form action="PinCreate.jsp" class="form" id="form" onsubmit="return myfun()">
+
+        <div class="form-group  group1">
+            <label  class="label">Account Number</label>
+            <div class="input-group">
+             <input type="text" class="input" id="account_number" value="" name="account_number">
+             <span id="accountMessage"></span>
+            </div>
+        </div>
+        <div class="form-group group1">
+            <label  class="label">Pin</label>
+            <div class="input-group">
+             <input type="text" class="input" id="pin" value="" name="pin">
+             <span id="pinMessage"></span>
+            </div>
+        </div>
+        <div class="form-group group1">
+            <label  class="label">Confirm Pin</label>
+            <div class="input-group">
+             <input type="text" class="input" id="confirm" value="" name="confirm">
+             <span id="confirmMessage"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" id="button">
+        </div>
+    </form>
+   </div> 
+   <script src="js/pinpage.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+database name:bank;
+// for account create , use this table
+CREATE TABLE `bank_account_create` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `accountholdername` varchar(100) NOT NULL,
+  `fathername` varchar(100) NOT NULL,
+  `mothername` varchar(100) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `nomineename` varchar(100) NOT NULL,
+  `aadhar` varchar(100) NOT NULL,
+  `phonenumber` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `account_number` varchar(100) NOT NULL,
+  `amount` int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+// this table is for transaction history
+CREATE TABLE `transaction_history` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(50) NOT NULL,
+  `transaction_type` varchar(50) NOT NULL,
+  `amount` varchar(40) NOT NULL,
+  `time` varchar(40) NOT NULL,
+  `date` varchar(40) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+// for debit card information
+
+CREATE TABLE `pintable` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(50) NOT NULL,
+  `mobile_number` varchar(50) NOT NULL,
+  `yea_r` int NOT NULL,
+  `mont_h` int NOT NULL,
+  `expire_year` int NOT NULL,
+  `expire_month` int NOT NULL,
+  `pin` varchar(50) NOT NULL,
+  `debitNumber` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+// admin information
+create table admininfo(
+admin_name varchar(50),
+password varchar(50)
+);

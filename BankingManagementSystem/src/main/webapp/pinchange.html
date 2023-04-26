@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pin Change</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+<style>
+.content {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	margin-top: -80px;
+}
+
+.form {
+	background-color: rgba(102, 151, 46, 0.523);
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 30px;
+	box-shadow: 1PX 1PX 1PX rgb(216, 209, 209), -1PX -1PX 1PX black;
+	border-radius: 10px;
+}
+
+.input {
+	width: 100%;
+	padding: 8px 0;
+	font-size: 20px;
+	text-align: center;
+	border: none;
+	opacity: .8;
+	border-radius: 10px;
+}
+
+.group1 {
+	width: 100%;
+	min-height: 18vh;
+	box-shadow: 1px 1px 1px black, -1px -1px 1px black;
+	padding: 10px 20px;
+	margin: 20px 0;
+	background-color: rgb(30, 84, 92);
+}
+
+.label {
+	padding-left: 235px;
+	color: white;
+	text-shadow: 1px 1px 1px rgb(15, 11, 11);
+	font-size: 20px;
+	word-spacing: 2px;
+	letter-spacing: 2px;
+}
+
+span {
+	color: green;
+	text-shadow: 1px 1px 1px black;
+	padding: 0 10px;
+	text-transform: capitalize;
+}
+
+#button {
+	background-color: rgb(5, 137, 56);
+	padding: 6px 206px;
+	color: wheat;
+	text-shadow: 1px 1px 1px black;
+	letter-spacing: 2px;
+	border-radius: 5px;
+	border: none;
+}
+
+#button:hover {
+	opacity: .9;
+}
+</style>
+</head>
+
+<body>
+	<div class="container text-center pt-3">
+		<h1 style="text-shadow: 1px 1px 1px black;">Change Your Pin</h1>
+	</div>
+	<div class="container content">
+		<form action="" class="form" id="form" onsubmit="return myfun()">
+			<div class="form-group group1">
+				<label class="label">New Pin</label>
+				<div class="input-group">
+					<input type="text" class="input" id="pin" value="" name="pin"
+						placeholder="new pin"> <span id="pinMessage"></span>
+				</div>
+			</div>
+			<div class="form-group group1">
+				<label class="label">Confirm Pin</label>
+				<div class="input-group">
+					<input type="text" class="input" id="confirm" value=""
+						name="confirm" placeholder="confirm pin"> <span
+						id="confirmMessage"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Save" id="button">
+			</div>
+		</form>
+	</div>
+	<script>
+		function myfun() {
+			const pin = document.getElementById("pin").value;
+			const confirmpin = document.getElementById("confirm").value;
+			if (pin == "") {
+				document.getElementById("pinMessage").innerHTML = "** Please fill PIN";
+				document.getElementById("pinMessage").style.color = "red";
+				return false;
+			} else {
+				if (pin.length == 4 && !isNaN(pin)) {
+					document.getElementById("pinMessage").innerHTML = "Done";
+					document.getElementById("pinMessage").style.color = "green";
+					if (pin != "" && confirmpin != "") {
+						if (pin == confirmpin) {
+							document.getElementById("confirmMessage").innerHTML = "Matched";
+							document.getElementById("confirmMessage").style.color = "green";
+							return true;
+						} else {
+							document.getElementById("confirmMessage").innerHTML = "Not Matched.";
+							document.getElementById("confirmMessage").style.color = "red";
+							return false;
+						}
+					} else {
+						document.getElementById("confirmMessage").innerHTML = "**Re-enter PIN";
+						document.getElementById("confirmMessage").style.color = "red";
+						return false;
+					}
+
+					return false;
+				} else {
+					document.getElementById("pinMessage").innerHTML = "PIN should be in 4 Numeric Character.";
+					document.getElementById("pinMessage").style.color = "red";
+					return false;
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
